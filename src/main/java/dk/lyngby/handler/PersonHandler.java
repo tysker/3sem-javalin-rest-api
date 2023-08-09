@@ -51,7 +51,7 @@ public class PersonHandler implements IEntityHandler<PersonDTO, Integer>{
         // entity
         Person person = PERSON_DAO.create(jsonRequest.toPerson());
         // dto
-        PersonDTO personDTO = new PersonDTO(person);
+        PersonDTO personDTO = new PersonDTO(person, person.getId());
         // response
         ctx.res().setStatus(201);
         ctx.json(personDTO, PersonDTO.class);

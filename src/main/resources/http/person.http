@@ -19,23 +19,7 @@ Authorization: Bearer {{token}}
   "firstName": "Karl",
   "lastName": "Hansen",
   "age": "55",
-  "email": "karl@mail.com",
-  "address": {
-    "street": "Lyngby Hovedgade",
-    "number": "55"
-  },
-  "zipCode": "2800",
-  "phoneNumbers": [
-    {
-      "number": "12345678",
-      "description": "Home"
-    },
-    {
-      "number": "87654321",
-      "description": "Work"
-    }
-  ],
-  "hobbies": ["Soccer", "Tennis", "Golf"]
+  "email": "karl@mail.com"
 }
 
 ###
