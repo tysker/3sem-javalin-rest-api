@@ -37,7 +37,7 @@
         <dependency>
             <groupId>io.javalin</groupId>
             <artifactId>javalin-bundle</artifactId>
-            <version>5.5.0</version>
+            <version>5.6.0</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -57,6 +57,7 @@
             <version>1.18.28</version>
             <scope>provided</scope>
         </dependency>
+
 
         <!--   Security     -->
 

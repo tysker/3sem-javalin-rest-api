@@ -23,7 +23,7 @@ Authorization: Bearer {{token}}
 }
 
 ###
-PUT {{url}}person/5
+PUT {{url}}person/1
 Content-Type: application/json
 Authorization: Bearer {{token}}
 

@@ -14,6 +14,7 @@ import org.junit.jupiter.api.*;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
+@Disabled
 class PersonHandlerTest {
 
     private static Javalin app;

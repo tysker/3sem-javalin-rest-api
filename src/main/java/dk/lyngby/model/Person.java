@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
@@ -30,6 +33,23 @@ public class Person {
 
     @Column(name = "email", length = 45)
     private String email;
+
+    @Column(name = "createDate")
+    private LocalDateTime createDate;
+
+    @Column(name = "updateDate")
+    private LocalDateTime updateDate;
+
+    @PrePersist
+    public void onPrePersist() {
+        this.setCreateDate(LocalDateTime.now());
+        this.setUpdateDate(LocalDateTime.now());
+    }
+
+    @PreUpdate
+    public void onPreUpdate() {
+        this.setUpdateDate(LocalDateTime.now());
+    }
 
     public Person(String firstName, String lastName, Integer age, String email) {
         this.firstName = firstName;

@@ -24,7 +24,7 @@ public class ApplicationConfig {
 
         // http
         config.http.defaultContentType = "application/json"; // default content type for requests
-        config.compression.brotliAndGzip(); // enable brotli and gzip compression of responses
+        //config.compression.brotliAndGzip(); // enable brotli and gzip compression of responses
 
         // routing
         config.routing.contextPath = "/api/v1"; // base path for all routes
