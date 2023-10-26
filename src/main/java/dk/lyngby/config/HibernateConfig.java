@@ -38,19 +38,9 @@ public class HibernateConfig {
                 props.put("hibernate.format_sql", "true"); // format sql in console
                 props.put("hibernate.use_sql_comments", "true"); // show sql comments in console
             }
-            props.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect"); // dialect for postgresql
-            props.put("hibernate.connection.driver_class", "org.postgresql.Driver"); // driver class for postgresql
-            props.put("hibernate.archive.autodetection", "class"); // hibernate scans for annotated classes
-            props.put("hibernate.current_session_context_class", "thread"); // hibernate current session context
-            props.put("hibernate.hbm2ddl.auto", "update"); // hibernate creates tables based on entities
 
-            // Hibernate Default Pool Configuration
-            // https://www.mastertheboss.com/hibernate-jpa/hibernate-configuration/configure-a-connection-pool-with-hibernate/
-            props.put("hibernate.connection.provider_class", "org.hibernate.hikaricp.internal.HikariCPConnectionProvider");// Maximum waiting time for a connection from the pool
-            props.put("hibernate.hikari.connectionTimeout", "10000"); // Minimum number of ideal connections in the pool
-            props.put("hibernate.hikari.minimumIdle", "5"); // Maximum number of actual connection in the pool
-            props.put("hibernate.hikari.maximumPoolSize", "20"); // Maximum time that a connection is allowed to sit ideal in the pool
-            props.put("hibernate.hikari.idleTimeout", "200000"); // Maximum size of statements that has been prepared
+            hibernateBasicConfiguration(props);
+
 
             return getEntityManagerFactory(configuration, props);
         } catch (Throwable ex) {
@@ -80,14 +70,21 @@ public class HibernateConfig {
         }
     }
 
+    private static void hibernateBasicConfiguration(Properties props) {
+        props.put("hibernate.show_sql", "true"); // show sql in console
+        props.put("hibernate.format_sql", "true"); // format sql in console
+        props.put("hibernate.use_sql_comments", "true"); // show sql comments in console
+        props.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect"); // dialect for postgresql
+        props.put("hibernate.connection.driver_class", "org.postgresql.Driver"); // driver class for postgresql
+        props.put("hibernate.archive.autodetection", "class"); // hibernate scans for annotated classes
+        props.put("hibernate.current_session_context_class", "thread"); // hibernate current session context
+        props.put("hibernate.hbm2ddl.auto", "update"); // hibernate creates tables based on entities
+    }
+
     private static EntityManagerFactory getEntityManagerFactory(Configuration configuration, Properties props) {
         configuration.setProperties(props);
-
         getAnnotationConfiguration(configuration);
-
         ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
-        System.out.println("Hibernate Java Config serviceRegistry created");
-
         SessionFactory sf = configuration.buildSessionFactory(serviceRegistry);
         return sf.unwrap(EntityManagerFactory.class);
     }

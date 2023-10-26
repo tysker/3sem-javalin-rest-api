@@ -126,10 +126,10 @@ Do the following to get the Testcontainers up and running:
 
 ### API Endpoints
 
-<img src="./utility/routes.png" alt="API endpoints">
+<img src="images/routes.png" alt="API endpoints">
 
 ***
 
 ### DTO (Data Transfer Object) and Entity Flow
 
-<img src="./utility/dto_flow.png" alt="DTO Flow">
+<img src="images/dto_flow.png" alt="DTO Flow">

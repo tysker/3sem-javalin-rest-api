@@ -38,7 +38,7 @@ Content-Type: application/json
 
 {
   "username": "admin",
-  "password": "admin"
+  "password": "admin123"
 }
 
 > {% client.global.set("token", response.body.token); %}
@@ -49,7 +49,7 @@ Content-Type: application/json
 
 {
   "username": "user",
-  "password": "user"
+  "password": "user123"
 }
 
 ### Login as manager

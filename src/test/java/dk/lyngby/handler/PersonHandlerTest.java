@@ -14,7 +14,6 @@ import org.junit.jupiter.api.*;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
-@Disabled
 class PersonHandlerTest {
 
     private static Javalin app;
@@ -35,7 +34,6 @@ class PersonHandlerTest {
         // Setup test database
         HibernateConfig.setTest(true);
         emfTest = HibernateConfig.getEntityManagerFactory();
-        TestData.createUserTestData(emfTest);
 
         // Start server
         app = Javalin.create();
@@ -44,6 +42,8 @@ class PersonHandlerTest {
         // Get tokens
         adminToken = LoginToken.getAdminToken();
         userToken = LoginToken.getUserToken();
+        System.out.println(adminToken);
+        System.out.println(userToken);
     }
 
     @AfterAll
@@ -104,7 +104,8 @@ class PersonHandlerTest {
 
         // given
         Person person = new Person("John", "Doe", 25, "doemail.com");
-
+        System.out.println(adminToken);
+        System.out.println(GSON.toJson(person));
         // when
         given()
                 .header("Authorization", adminToken)
@@ -137,33 +138,33 @@ class PersonHandlerTest {
                 .body("size()", equalTo(listSize));
     }
 
-    @Test
-    void getPersonById() {
-
-        // given
-
-        // when
-
-        // then
-    }
-
-    @Test
-    void updatePersonById() {
-
-        // given
-
-        // when
-
-        // then
-    }
-
-    @Test
-    void deletePersonById() {
-
-            // given
-
-            // when
-
-            // then
-    }
+//    @Test
+//    void getPersonById() {
+//
+//        // given
+//
+//        // when
+//
+//        // then
+//    }
+//
+//    @Test
+//    void updatePersonById() {
+//
+//        // given
+//
+//        // when
+//
+//        // then
+//    }
+//
+//    @Test
+//    void deletePersonById() {
+//
+//            // given
+//
+//            // when
+//
+//            // then
+//    }
 }

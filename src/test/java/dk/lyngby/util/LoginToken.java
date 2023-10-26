@@ -1,6 +1,5 @@
 package dk.lyngby.util;
 
-import dk.lyngby.model.User;
 
 import static io.restassured.RestAssured.given;
 

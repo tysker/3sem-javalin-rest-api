@@ -35,6 +35,8 @@ public class ApplicationConfig {
 
         // Route overview
         config.plugins.register(new RouteOverviewPlugin("/routes")); // enables route overview at /routes
+
+
     }
 
     public static String getProperty(String propName) throws IOException {
