@@ -1,5 +1,5 @@
 ### Register user/admin
-POST {{url}}auth/register
+POST https://api.cphbusinessapps.dk/api/v1/auth/register
 Content-Type: application/json
 
 {

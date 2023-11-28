@@ -11,7 +11,7 @@ DELETE {{url}}person/6
 Authorization: Bearer {{token}}
 
 ###
-POST {{url}}person
+POST https://api.cphbusinessapps.dk/api/v1/person
 Content-Type: application/json
 Authorization: Bearer {{token}}
 

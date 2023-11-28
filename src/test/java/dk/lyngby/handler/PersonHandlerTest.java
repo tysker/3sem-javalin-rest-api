@@ -14,7 +14,7 @@ import org.junit.jupiter.api.*;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
-class PersonHandlerTest {
+class   PersonHandlerTest {
 
     private static Javalin app;
     private static EntityManagerFactory emfTest;

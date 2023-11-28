@@ -16,6 +16,10 @@ public class PersonRoutes {
             path("/person", () -> {
                 post("/", personHandler::create, RouteRoles.ADMIN, RouteRoles.MANAGER);
                 get("/", personHandler::readAll, RouteRoles.ANYONE);
+                get("/search", (ctx) -> {
+                    String hello = "Hello World";
+                    ctx.json(hello);
+                }, RouteRoles.ANYONE);
                 get("{id}", personHandler::read, RouteRoles.USER, RouteRoles.ADMIN);
                 put("{id}", personHandler::update, RouteRoles.ADMIN);
                 delete("{id}", personHandler::delete, RouteRoles.ADMIN);
