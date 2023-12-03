@@ -11,12 +11,12 @@ DELETE {{url}}person/6
 Authorization: Bearer {{token}}
 
 ###
-POST https://api.cphbusinessapps.dk/api/v1/person
+POST {{url}}person
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "firstName": "Karl",
+  "firstName": "Dennis",
   "lastName": "Hansen",
   "age": "55",
   "email": "karl@mail.com"

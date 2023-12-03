@@ -1,5 +1,5 @@
 ### Register user/admin
-POST https://api.cphbusinessapps.dk/api/v1/auth/register
+POST https://api.stylizedace.dk/api/v1/auth/register
 Content-Type: application/json
 
 {
@@ -33,12 +33,12 @@ Content-Type: application/json
 > {% client.global.set("token", response.body.token); %}
 
 ### Login as admin
-POST {{url}}auth/login
+POST https://api.joergoertel.dk/api/v1/auth/login
 Content-Type: application/json
 
 {
   "username": "admin",
-  "password": "admin123"
+  "password": "admin"
 }
 
 > {% client.global.set("token", response.body.token); %}

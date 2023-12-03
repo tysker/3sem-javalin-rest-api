@@ -36,6 +36,7 @@ public class Routes {
         return () -> {
             app.before(this::requestInfoHandler);
             app.before(this::corsHandler);
+            app.options("/*", this::corsHandler);
             app.routes(() -> {
                 path("/", userRoutes.getRoutes());
                 path("/", personRoutes.getRoutes());
